@@ -1,5 +1,6 @@
-import { productsByCategory, categories } from "@/data/products";
 import CategorySection from "@/components/shop/CategorySection";
+import SubcategoryTile from "@/components/shop/SubCategoryTile";
+import { productsByCategory, categories } from "@/data/products";
 
 export default function Index() {
   return (
@@ -11,7 +12,7 @@ export default function Index() {
               Ночная доставка алкоголя, снеков, секс-товаров и товаров для питомцев
             </h1>
             <p className="text-muted-foreground">
-              Быстро и незаметно привезём всё необходимое — от премиум напитков до лакомств для ваших питомцев. Работает 24/7.
+              Быстро и незаметно пр��везём всё необходимое — от премиум напитков до лакомств для ваших питомцев. Работает 24/7.
             </p>
           </div>
           <div className="relative">
@@ -32,27 +33,64 @@ export default function Index() {
 
 function HomeCatalog() {
   return (
-    <div className="space-y-2">
-      <CategorySection
-        title={categories.alcohol.title}
-        description={categories.alcohol.description}
-        products={productsByCategory.alcohol}
-      />
-      <CategorySection
-        title={categories.snacks.title}
-        description={categories.snacks.description}
-        products={productsByCategory.snacks}
-      />
-      <CategorySection
-        title={categories.intim.title}
-        description={categories.intim.description}
-        products={productsByCategory.intim}
-      />
-      <CategorySection
-        title={categories.pets.title}
-        description={categories.pets.description}
-        products={productsByCategory.pets}
-      />
+    <div className="space-y-8">
+      {/* Alcohol subcategories tiles on homepage */}
+      <section className="container py-6">
+        <div className="mb-4">
+          <h2 className="text-xl font-semibold">{categories.alcohol.title}</h2>
+          <p className="text-sm text-muted-foreground">{categories.alcohol.description}</p>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {Object.entries(categories.alcohol.subcategories || {}).map(([key, val]) => (
+            <SubcategoryTile key={key} category="alcohol" keyName={key} title={val.title} icon={val.icon} />
+          ))}
+        </div>
+      </section>
+
+      {/* Snacks subcategories */}
+      {categories.snacks.subcategories ? (
+        <section className="container py-6">
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold">{categories.snacks.title}</h2>
+            <p className="text-sm text-muted-foreground">{categories.snacks.description}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {Object.entries(categories.snacks.subcategories || {}).map(([key, val]) => (
+              <SubcategoryTile key={key} category="snacks" keyName={key} title={val.title} icon={"img"} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* Intim subcategories */}
+      {categories.intim.subcategories ? (
+        <section className="container py-6">
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold">{categories.intim.title}</h2>
+            <p className="text-sm text-muted-foreground">{categories.intim.description}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {Object.entries(categories.intim.subcategories || {}).map(([key, val]) => (
+              <SubcategoryTile key={key} category="intim" keyName={key} title={val.title} icon={val.icon} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* Pets subcategories */}
+      {categories.pets.subcategories ? (
+        <section className="container py-6">
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold">{categories.pets.title}</h2>
+            <p className="text-sm text-muted-foreground">{categories.pets.description}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {Object.entries(categories.pets.subcategories || {}).map(([key, val]) => (
+              <SubcategoryTile key={key} category="pets" keyName={key} title={val.title} icon={val.icon} />
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

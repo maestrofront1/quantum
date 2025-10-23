@@ -38,14 +38,14 @@ export default function ProductPage() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          {/*<CarouselPrevious />*/}
+          {/*<CarouselNext />*/}
         </Carousel>
-        <div className="mt-3 grid grid-cols-5 gap-2">
-          {product.images.map((src, i) => (
-            <img key={i} src={src} alt="thumb" className="aspect-square w-full rounded-md border object-cover" />
-          ))}
-        </div>
+        {/*<div className="mt-3 grid grid-cols-5 gap-2">*/}
+        {/*  {product.images.map((src, i) => (*/}
+        {/*    <img key={i} src={src} alt="thumb" className="aspect-square w-full rounded-md border object-cover" />*/}
+        {/*  ))}*/}
+        {/*</div>*/}
       </div>
       <div className="space-y-5">
         <div>

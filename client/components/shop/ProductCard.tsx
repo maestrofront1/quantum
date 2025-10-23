@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "./CartContext";
 import type { Product } from "@/data/products";

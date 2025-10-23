@@ -1,20 +1,30 @@
-import ProductCard from "./ProductCard";
 import type { Product } from "@/data/products";
+import ProductCard from "@/components/shop/ProductCard";
+import * as Router from "react-router-dom";
 
 export default function CategorySection({
-  title,
-  description,
-  products,
-}: {
+                                          title,
+                                          description,
+                                          products,
+                                          categoryKey,
+                                        }: {
   title: string;
   description?: string;
   products: Product[];
+  categoryKey?: string;
 }) {
   return (
     <section className="container py-6 sm:py-10">
       <div className="mb-4 flex items-end justify-between gap-4">
         <div>
-          <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
+          {categoryKey ? (
+            <h2 className="text-xl font-semibold sm:text-2xl">
+              <Router.Link to={`/category/${categoryKey}`} className="hover:underline">{title}</Router.Link>
+            </h2>
+          ) : (
+            <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
+          )}
+
           {description ? (
             <p className="text-sm text-muted-foreground">{description}</p>
           ) : null}
