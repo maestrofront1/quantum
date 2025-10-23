@@ -56,7 +56,7 @@ function HomeCatalog() {
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {Object.entries(categories.snacks.subcategories || {}).map(([key, val]) => (
-              <SubcategoryTile key={key} category="snacks" keyName={key} title={val.title} icon={"img"} />
+              <SubcategoryTile key={key} category="snacks" keyName={key} title={val.title} icon={val.icon} />
             ))}
           </div>
         </section>
