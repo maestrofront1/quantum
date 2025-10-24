@@ -1,21 +1,21 @@
 import "./global.css";
 
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "../shared/ui/toaster";
 import { createRoot } from "react-dom/client";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster as Sonner } from "../shared/ui/sonner";
+import { TooltipProvider } from "../shared/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import CategoryPage from "./pages/Category";
+import Index from "../pages/Index";
+import NotFound from "../pages/NotFound";
+import CategoryPage from "../pages/Category";
 
 const queryClient = new QueryClient();
 
-import MainLayout from "@/components/layout/MainLayout";
-import { CartProvider } from "@/components/shop/CartContext";
-import ProductPage from "@/pages/Product";
-import SearchPage from "@/pages/Search";
+import MainLayout from "../features/layout/MainLayout";
+import { CartProvider } from "../features/shop/CartContext";
+import ProductPage from "../pages/Product";
+import SearchPage from "../pages/Search";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

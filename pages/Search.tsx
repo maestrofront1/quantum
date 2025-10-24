@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
-import { catalog } from "@/data/products";
-import ProductCard from "@/components/shop/ProductCard";
+import { catalog } from "../app/data/products";
+import ProductCard from "../features/shop/ProductCard";
 
 export default function SearchPage() {
   const [searchParams] = useSearchParams();

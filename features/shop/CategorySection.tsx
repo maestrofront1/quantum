@@ -1,5 +1,5 @@
-import type { Product } from "@/data/products";
-import ProductCard from "@/components/shop/ProductCard";
+import type { Product } from "../../app/data/products";
+import ProductCard from "./ProductCard";
 import * as Router from "react-router-dom";
 
 export default function CategorySection({

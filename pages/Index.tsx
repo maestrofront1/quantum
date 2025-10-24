@@ -1,6 +1,6 @@
-import CategorySection from "@/components/shop/CategorySection";
-import SubcategoryTile from "@/components/shop/SubCategoryTile";
-import { productsByCategory, categories } from "@/data/products";
+// import CategorySection from "@/components/shop/CategorySection";
+import SubcategoryTile from "../features/shop/SubCategoryTile";
+import { productsByCategory, categories } from "../app/data/products";
 
 export default function Index() {
   return (

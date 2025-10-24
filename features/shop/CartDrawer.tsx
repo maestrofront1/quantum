@@ -1,5 +1,5 @@
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../../shared/ui/sheet";
+import { Button } from "../../shared/ui/button";
 import { useCart } from "./CartContext";
 
 export default function CartDrawer() {

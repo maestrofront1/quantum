@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { catalog } from "@/data/products";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button";
-import { useCart } from "@/components/shop/CartContext";
+import { catalog } from "../app/data/products";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../shared/ui/carousel";
+import { Button } from "../shared/ui/button";
+import { useCart } from "../features/shop/CartContext";
 import { useMemo, useState } from "react";
 
 export default function ProductPage() {

@@ -1,12 +1,12 @@
 // import { useParams, Link } from "react-router-dom";
-import { categories, getProductsByCategoryAndSub } from "@/data/products";
-import CategorySection from "@/components/shop/CategorySection";
-import ProductCard from "@/components/shop/ProductCard";
-import SubcategoryTile from "@/components/shop/SubCategoryTile";
+import { categories, getProductsByCategoryAndSub } from "../app/data/products";
+// import CategorySection from "@/components/shop/CategorySection";
+import ProductCard from "../features/shop/ProductCard";
+import SubcategoryTile from "../features/shop/SubCategoryTile";
 import * as Router from "react-router-dom";
 import { useState, useMemo } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "../shared/ui/button";
+import { Input } from "../shared/ui/input";
 
 export default function CategoryPage() {
   const { category, sub } = Router.useParams<{ category: string; sub?: string }>();

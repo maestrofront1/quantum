@@ -8,7 +8,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 5432,
     fs: {
-      allow: ["./client", "./shared", path.resolve(__dirname)],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
@@ -18,8 +17,8 @@ export default defineConfig(({ mode }) => ({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./client"),
-      "@shared": path.resolve(__dirname, "./shared"),
+      // "@": path.resolve(__dirname, "./client"),
+      // "@shared": path.resolve(__dirname, "./shared"),
     },
   },
 }));

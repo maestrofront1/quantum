@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../shared/ui/button";
 import { useCart } from "./CartContext";
-import type { Product } from "@/data/products";
+import type { Product } from "../../app/data/products";
 import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product }: { product: Product }) {

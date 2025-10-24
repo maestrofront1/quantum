@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "../../shared/ui/input";
+import { Button } from "../../shared/ui/button";
 import { ShoppingBag, Moon, Search } from "lucide-react";
-import CartDrawer from "@/components/shop/CartDrawer";
-import { useCart } from "@/components/shop/CartContext";
+import CartDrawer from "../shop/CartDrawer";
+import { useCart } from "../shop/CartContext";
 import { useState, useMemo, useRef, useEffect } from "react";
-import { Dialog, DialogTrigger, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { catalog } from "@/data/products";
-import ProductCard from "@/components/shop/ProductCard";
+import { Dialog, DialogTrigger, DialogContent, DialogTitle } from "../../shared/ui/dialog";
+import { catalog } from "../../app/data/products";
+// import ProductCard from "@/components/shop/ProductCard";
 
 export default function MainLayout() {
   const { count, setOpen } = useCart();
@@ -157,7 +157,7 @@ export default function MainLayout() {
       </main>
 
       <footer className="mt-10 border-t py-8 text-center text-sm text-muted-foreground">
-        <div className="container">© {new Date().getFullYear()} Ночная Лавка · Ночная доставка 24/7</div>
+        <div className="container">© {new Date().getFullYear()} Night Market · Ночная доставка 24/7</div>
       </footer>
 
       <CartDrawer />
